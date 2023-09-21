@@ -8,7 +8,7 @@ export default function Home(props: { data: Soap[] }) {
   const { data } = props;
   const [totalAmount, setTotalAmount] = useState<number>(data.length);
 
-  const totalAmountHandler = (amount: number, operation: string) => {
+  const totalAmountHandler = (operation: string) => {
     operation === "+" && setTotalAmount((prevState: number) => prevState + 1);
     operation === "-" &&
       setTotalAmount((prevState: number) =>

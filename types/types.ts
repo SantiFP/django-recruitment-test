@@ -11,5 +11,5 @@ export type SoapCard = {
   price: number;
   img: string;
   description: string;
-  totalAmountHandler: (amount: number, operation: string) => void;
+  totalAmountHandler: (operation: string) => void;
 };

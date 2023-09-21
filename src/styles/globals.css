@@ -10,18 +10,23 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  background-color: rgb(212 212 216);
+  /* background-color: rgb(33, 102, 129); */
+}
+
 @layer components {
-  .totalItemsDiv{
-    @apply flex justify-center mt-2
+  .totalItemsDiv {
+    @apply flex justify-center mt-2;
   }
-  .totalItemsParagraph{
-    @apply fixed bg-zinc-800 w-fit px-4 py-1 text-white text-3xl
+  .totalItemsParagraph {
+    @apply fixed bg-zinc-800 w-fit px-4 py-1 text-white text-3xl;
   }
-  .ul{
-    @apply flex flex-wrap mt-14 ml-3
+  .ul {
+    @apply flex flex-wrap mt-14 ml-3;
   }
-  .listItems{
-    @apply w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/6 lg:mr-4 
+  .listItems {
+    @apply bg-white w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/6 lg:mr-4;
   }
   .cardDiv {
     @apply w-5/6 mx-auto flex flex-col space-y-4;
