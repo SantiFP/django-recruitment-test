@@ -6,8 +6,8 @@ const Card = (props: SoapCard) => {
   const { name, price, img, description, totalAmountHandler } = props;
 
   const [amount, setAmount] = useState<number>(1);
+  const [titleSize, setTitleSize] = useState<number>(18);
   const [title, setTitle] = useState<string>(name);
-  const [titleSize, setTitleSize] = useState(18);
 
   const formHandler = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Card = (props: SoapCard) => {
 
   return (
     <form onSubmit={formHandler} className="border-2 py-8 border-black ">
-      <div className="w-5/6 mx-auto flex flex-col space-y-4 ">
+      <div className="cardDiv">
         <Image
           width={160}
           height={96}
@@ -43,7 +43,7 @@ const Card = (props: SoapCard) => {
         </p>
         <label htmlFor="edit">Edit product title below!!</label>
         <input
-          className="border-2 pl-2 py-1 outline-none border-gray-300"
+          className="input"
           id="edit"
           type="text"
           placeholder="Edit title!!"
@@ -61,35 +61,33 @@ const Card = (props: SoapCard) => {
           max="28"
           value={titleSize}
         />
-        <div className="flex flex-row space-x-3 justify-center pt-2 w-full items-center lg:pl-2 lg:justify-normal">
+        <div className="amountDiv">
           <p className="text-lg font-bold">${(amount * price).toFixed(2)}</p>
-          <p className=" border-2 border-gray-400 px-5 py-1 ">{amount}</p>
+          <p className="amount">{amount}</p>
         </div>
-        <div className="flex flex-row justify-center space-x-2 text-white">
+        <div className="amountButtonsDiv">
           <button
             onClick={() => {
               amountHandler("-");
-              totalAmountHandler(amount,'-');
+              totalAmountHandler(amount, "-");
             }}
-            className="bg-zinc-800 px-5 pb-2 pt-1 h-full"
+            className="amountButton"
           >
             -
           </button>
           <button
             onClick={() => {
               amountHandler("+");
-              totalAmountHandler(amount,'+')
+              totalAmountHandler(amount, "+");
             }}
-            className="bg-zinc-800 px-5 pb-2 pt-1 h-full"
+            className="amountButton"
           >
             +
           </button>
         </div>
         <p className="text-sm font-extralight ">{description}</p>
-        <div className="flex flex-col items-center space-y-4">
-          <button className="bg-gray-300 border-2 border-black w-fit px-4 py-1 ">
-            Add to cart
-          </button>
+        <div className="addToCartDiv">
+          <button className="button">Add to cart</button>
           <p className="underline">Learn More</p>
         </div>
       </div>

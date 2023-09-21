@@ -5,29 +5,24 @@ import { Soap } from "../../types/types";
 import { useState } from "react";
 
 export default function Home(props: { data: Soap[] }) {
-  const [totalAmount, setTotalAmount] = useState(7);
   const { data } = props;
+  const [totalAmount, setTotalAmount] = useState<number>(data.length);
 
   const totalAmountHandler = (amount: number, operation: string) => {
     operation === "+" && setTotalAmount((prevState: number) => prevState + 1);
     operation === "-" &&
       setTotalAmount((prevState: number) =>
-        prevState === 7 ? 7 : prevState - 1
+        prevState === data.length ? data.length : prevState - 1
       );
   };
   return (
     <>
-      <div className=" flex justify-center mt-2">
-        <p className="fixed bg-zinc-800 w-fit px-4 py-1 text-white text-3xl">
-          TOTAL ITEMS: {totalAmount}
-        </p>
+      <div className="totalItemsDiv">
+        <p className="totalItemsParagraph">TOTAL ITEMS: {totalAmount}</p>
       </div>
-      <ul className="flex flex-wrap mt-14 ml-3">
+      <ul className="ul">
         {data.map((el: Soap) => (
-          <li
-            className="w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/6 lg:mr-4 "
-            key={el.id}
-          >
+          <li className="listItems" key={el.id}>
             <Card
               name={el.name}
               description={el.description}
