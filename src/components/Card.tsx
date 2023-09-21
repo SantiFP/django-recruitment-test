@@ -29,7 +29,7 @@ const Card = (props: SoapCard) => {
   };
 
   return (
-    <form onSubmit={formHandler} className="border-2 py-8 border-black">
+    <form onSubmit={formHandler} className="border-2 py-10 border-black">
       <div className="cardDiv">
         <Image
           width={160}
@@ -39,7 +39,7 @@ const Card = (props: SoapCard) => {
           alt="soap"
           style={{width:'auto'}}
         />
-        <p style={{ fontSize: titleSize }} className="text-lg font-bold h-[4rem]">
+        <p style={{ fontSize: titleSize }} className="text-lg font-bold pb-[4.4rem] h-[4rem]">
           {title}
         </p>
         <label htmlFor="edit">Edit product title below!!</label>
