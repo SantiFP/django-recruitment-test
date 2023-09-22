@@ -29,7 +29,7 @@ const Card = (props: SoapCard) => {
   };
 
   return (
-    <form onSubmit={formHandler} className="border-2 py-10 border-black">
+    <form onSubmit={formHandler} className="form">
       <div className="cardDiv">
         <Image
           width={160}
@@ -37,9 +37,9 @@ const Card = (props: SoapCard) => {
           className="mx-auto rounded-lg h-auto"
           src={img}
           alt="soap"
-          style={{width:'auto'}}
+          style={{ width: "auto" }}
         />
-        <p style={{ fontSize: titleSize }} className="text-lg font-bold pb-[4.4rem] h-[4rem]">
+        <p style={{ fontSize: titleSize }} className="title">
           {title}
         </p>
         <label htmlFor="edit">Edit product title below!!</label>
@@ -70,7 +70,6 @@ const Card = (props: SoapCard) => {
           <button
             onClick={() => {
               amountHandler("-");
-              totalAmountHandler("-");
             }}
             className="amountButton"
           >
@@ -79,7 +78,6 @@ const Card = (props: SoapCard) => {
           <button
             onClick={() => {
               amountHandler("+");
-              totalAmountHandler("+");
             }}
             className="amountButton"
           >
@@ -88,7 +86,12 @@ const Card = (props: SoapCard) => {
         </div>
         <p className="text-sm font-extralight ">{description}</p>
         <div className="addToCartDiv">
-          <button className="button">Add to cart</button>
+          <button
+            onClick={totalAmountHandler.bind(null, amount)}
+            className="button"
+          >
+            Add to cart
+          </button>
           <p className="underline">Learn More</p>
         </div>
       </div>

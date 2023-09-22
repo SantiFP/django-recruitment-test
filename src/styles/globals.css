@@ -12,7 +12,6 @@
 
 body {
   background-color: rgb(212 212 216);
-  /* background-color: rgb(33, 102, 129); */
 }
 
 @layer components {
@@ -23,13 +22,19 @@ body {
     @apply fixed bg-zinc-800 w-fit px-4 py-1 text-white text-3xl;
   }
   .ul {
-    @apply flex flex-wrap mt-14 ml-3;
+    @apply flex flex-wrap mt-14 lg:pl-3 lg:w-11/12 lg:mx-auto;
   }
   .listItems {
-    @apply bg-white w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/6 lg:mr-4;
+    @apply w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/5;
+  }
+  .form {
+    @apply bg-white border-2 py-10 border-black lg:w-[95%];
   }
   .cardDiv {
     @apply w-5/6 mx-auto flex flex-col space-y-4;
+  }
+  .title {
+    @apply text-lg font-bold pb-[4.4rem] h-[4rem];
   }
   .input {
     @apply border-2 pl-2 py-1 outline-none border-gray-300;
@@ -40,11 +45,9 @@ body {
   .amount {
     @apply border-2 border-gray-400 px-5 py-1;
   }
-
   .amountButtonsDiv {
     @apply flex flex-row justify-center space-x-2 text-white;
   }
-
   .amountButton {
     @apply bg-zinc-800 px-5 pb-2 pt-1 h-full;
   }

@@ -6,14 +6,10 @@ import { useState } from "react";
 
 export default function Home(props: { data: Soap[] }) {
   const { data } = props;
-  const [totalAmount, setTotalAmount] = useState<number>(data.length);
+  const [totalAmount, setTotalAmount] = useState<number>(0);
 
-  const totalAmountHandler = (operation: string) => {
-    operation === "+" && setTotalAmount((prevState: number) => prevState + 1);
-    operation === "-" &&
-      setTotalAmount((prevState: number) =>
-        prevState === data.length ? data.length : prevState - 1
-      );
+  const totalAmountHandler = (amount: number) => {
+    setTotalAmount((prevState: number) => prevState + amount);
   };
   return (
     <>
