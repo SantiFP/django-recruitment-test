@@ -22,7 +22,7 @@ body {
     @apply fixed bg-zinc-800 w-fit px-4 py-1 text-white text-3xl;
   }
   .ul {
-    @apply flex flex-wrap mt-14 lg:pl-3 lg:w-11/12 lg:mx-auto;
+    @apply flex flex-wrap mt-14 lg:pl-4 lg:w-11/12 lg:mx-auto;
   }
   .listItems {
     @apply w-5/6 mx-auto mb-4 lg:mx-0 lg:w-1/5;
